@@ -1,0 +1,7 @@
+# This file keeps the static2 directory in Git
+# Place your course PDF files here with the following naming format:
+# [SEMESTER] SEM- ([SUBJECT]) '[BOOK TITLE]' by [AUTHOR].pdf
+#
+# Example:
+# IV SEM- (COMP) 'Computer Fundamentals- Architecture and Organization' by B. Ram.pdf
+# V SEM- (AI) 'The Quest for Artificial Intelligence' by Nils J. Nilsson.pdf

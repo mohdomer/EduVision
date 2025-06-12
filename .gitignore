@@ -1,0 +1,100 @@
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.venv
+# Google service account keys
+*.json
+ondemand-*.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+backend.log
+flask.log
+
+# FAISS index files
+faiss_index/
+faiss_index.*
+
+# Next.js
+eduvision-app/.next/
+eduvision-app/out/
+eduvision-app/build/
+eduvision-app/dist/
+
+# Node modules
+node_modules/
+eduvision-app/node_modules/
+
+# Package lock files (keep pnpm-lock.yaml but ignore others)
+package-lock.json
+yarn.lock
+
+# Testing
+.coverage
+.pytest_cache/
+.tox/
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Large files that shouldn't be in git
+*.pdf
+static2/*.pdf
+
+# Cache
+.cache/
+*.cache
