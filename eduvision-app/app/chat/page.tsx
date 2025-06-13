@@ -245,11 +245,12 @@ export default function ChatPage() {
   const getBranchName = (branchId: string) => {
     const branches: Record<string, string> = {
       cse: "CSE",
+      "ai-ds": "AI-DS",
+      it: "IT",
       ece: "ECE",
       me: "ME",
       ce: "CE",
       ee: "EE",
-      it: "IT",
     }
     return branches[branchId] || branchId.toUpperCase()
   }

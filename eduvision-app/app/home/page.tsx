@@ -15,10 +15,10 @@ const branches = [
     description: "AI, ML & Data Analytics",
   },
   {
-    id: "ai-ml",
-    name: "Artificial Intelligence & Machine Learning (AI-ML)",
-    icon: "🧠",
-    description: "Advanced AI & ML techniques",
+    id: "it",
+    name: "Information Technology (IT)",
+    icon: "🌐",
+    description: "Networks, systems & IT infrastructure",
   },
 ]
 

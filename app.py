@@ -260,6 +260,9 @@ def find_pdf_by_criteria(branch, subject, semester, book=None, author=None):
         logger.error(f"Error listing files in {static_folder}: {str(e)}")
         return None
     
+    # Log the search criteria for debugging
+    logger.info(f"Searching for PDFs: branch={branch}, subject={subject}, semester={roman_semester}")
+    
     # Filter by semester and subject
     matching_files = []
     for file in pdf_files:
@@ -274,8 +277,10 @@ def find_pdf_by_criteria(branch, subject, semester, book=None, author=None):
     
     # Return first matching file if no exact match
     if matching_files:
+        logger.info(f"Found matching PDF: {matching_files[0]}")
         return os.path.join(static_folder, matching_files[0])
     
+    logger.warning(f"No matching PDFs found for criteria: {roman_semester} SEM, ({subject.upper()})")
     return None
 
 @app.route('/')

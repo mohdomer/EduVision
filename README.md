@@ -180,7 +180,7 @@ curl -X POST http://localhost:5001/chat \
 ## 🎯 Usage Flow
 
 1. **Login**: Use any `@mjcollege.ac.in` email
-2. **Select Branch**: Choose your engineering branch (CSE, ECE, etc.)
+2. **Select Branch**: Choose your engineering branch (CSE, AI-DS, IT)
 3. **Pick Semester**: Select current semester (1-8)
 4. **Choose Subject**: Pick from available subjects
 5. **Select Book**: Choose from real textbooks in curriculum
