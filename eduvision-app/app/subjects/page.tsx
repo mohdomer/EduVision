@@ -318,7 +318,7 @@ const subjectsData: Record<
       },
     ],
   },
-  "ai-ml": {
+  it: {
     "4": [
       {
         id: "or",
@@ -407,7 +407,7 @@ const subjectsData: Record<
         name: "Software Engineering",
         description: "SDLC, testing methodologies",
         books: 3,
-        clickable: false,
+        clickable: true,
         icon: "⚙️",
       },
       {
@@ -522,7 +522,7 @@ export default function SubjectsPage() {
     const branches: Record<string, string> = {
       cse: "Computer Science Engineering",
       "ai-ds": "AI & Data Science",
-      "ai-ml": "AI & Machine Learning",
+      it: "Information Technology",
     }
     return branches[branchId] || branchId.toUpperCase()
   }
