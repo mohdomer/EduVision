@@ -6,7 +6,6 @@
 .env.production.local
 .venv
 # Google service account keys
-*.json
 ondemand-*.json
 
 # Python
@@ -76,8 +75,7 @@ eduvision-app/dist/
 node_modules/
 eduvision-app/node_modules/
 
-# Package lock files (keep pnpm-lock.yaml but ignore others)
-package-lock.json
+# Package lock files (keep package-lock.json and pnpm-lock.yaml but ignore yarn.lock)
 yarn.lock
 
 # Testing
