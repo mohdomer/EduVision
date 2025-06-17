@@ -32,6 +32,15 @@ Frontend (Next.js) ↔ Backend (Flask) ↔ Google Gemini API
 - **Google API Key** (for Gemini)
 - **Git**
 
+## 🔧 Recent Fixes (v2.0)
+
+**Issues Fixed for Fresh Installation:**
+- ✅ Fixed `date-fns` version compatibility with `react-day-picker`
+- ✅ Removed duplicate hook files causing import conflicts
+- ✅ Resolved CSS styling conflicts between directories  
+- ✅ Updated dependency installation to use `--legacy-peer-deps`
+- ✅ Added comprehensive troubleshooting guides
+
 ## 🚀 Quick Setup
 
 ### 1. Clone the Repository
@@ -39,6 +48,9 @@ Frontend (Next.js) ↔ Backend (Flask) ↔ Google Gemini API
 ```bash
 git clone https://github.com/mohdomer/EduVision.git
 cd EduVision
+
+# Verify you're in the right directory (should see eduvision-app folder)
+ls
 ```
 
 ### 2. Backend Setup
@@ -57,14 +69,24 @@ echo "GOOGLE_API_KEY=your_google_api_key_here" > .env
 ### 3. Frontend Setup
 
 ```bash
+# IMPORTANT: Make sure you're in the EduVision root directory first
+# Then navigate to the frontend folder
 cd eduvision-app
 
-# Install dependencies
+# Install dependencies (use legacy-peer-deps for compatibility)
 npm install --legacy-peer-deps
+
+# Test the build to ensure everything works
+npm run build
 
 # Return to root directory
 cd ..
 ```
+
+**⚠️ Common Error:** If you get `ENOENT: no such file or directory, open package.json`, you're in the wrong directory. Make sure you:
+1. Are in the `EduVision` root directory first
+2. Then run `cd eduvision-app` 
+3. Then run `npm install --legacy-peer-deps`
 
 ### 4. Add Your PDFs
 
@@ -100,6 +122,34 @@ npm run dev
 ```
 
 Frontend runs on: http://localhost:3000
+
+## ✅ Verify Installation
+
+### Quick Frontend Test
+
+```bash
+cd eduvision-app
+
+# Test build process
+npm run build
+
+# Start development server
+npm run dev
+```
+
+If the build succeeds and dev server starts without errors, your frontend setup is correct!
+
+### Quick Backend Test
+
+```bash
+# From project root
+python app.py
+```
+
+The backend should start and display:
+- ✅ Available Google Gemini models
+- ✅ API running on available port
+- ✅ Health check endpoint ready
 
 ## 📁 Project Structure
 
@@ -225,21 +275,42 @@ curl http://localhost:5001/models
 ### Frontend Issues
 
 ```bash
-# Clear frontend cache
+# Clear frontend cache and node_modules if needed
 cd eduvision-app
-rm -rf .next
-npm run dev
+rm -rf .next node_modules package-lock.json
+npm install --legacy-peer-deps
+npm run build
 
 # Check browser console for errors
 # Open Developer Tools → Console
 ```
 
+### Package Dependency Issues
+
+If you encounter peer dependency conflicts during `npm install`:
+
+```bash
+# Use legacy peer deps (recommended)
+npm install --legacy-peer-deps
+
+# Or use force flag (not recommended but works)
+npm install --force
+
+# Clean install if issues persist
+rm -rf node_modules package-lock.json
+npm install --legacy-peer-deps
+```
+
 ### Common Issues
 
-1. **Port already in use**: Backend automatically finds available ports
-2. **Google API errors**: Check your API key in `.env`
-3. **PDF not found**: Ensure correct naming format in `static2/`
-4. **Connection refused**: Make sure backend is running first
+1. **ENOENT package.json error**: You're in the wrong directory. Navigate to `EduVision` root, then `cd eduvision-app`
+2. **Port already in use**: Backend automatically finds available ports
+3. **Google API errors**: Check your API key in `.env`
+4. **PDF not found**: Ensure correct naming format in `static2/`
+5. **Connection refused**: Make sure backend is running first
+6. **Peer dependency conflicts**: Use `npm install --legacy-peer-deps` instead of regular `npm install`
+7. **Build failures**: Clean install with `rm -rf node_modules package-lock.json && npm install --legacy-peer-deps`
+8. **Missing dependencies**: Ensure you're in the `eduvision-app` directory when running npm commands
 
 ## 🤝 Contributing
 
